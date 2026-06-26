@@ -21,7 +21,15 @@ body{
 .logo{
     float:left;
     position:relative;
-    top:15px;
+    /* Centrado perfecto para el nuevo tamaño del logo */
+    top:10px;
+}
+
+/* REGLA DEL LOGO: Subido a 90px de alto para que tenga un tamaño excelente y gran presencia */
+.logo img {
+    height: 90px;
+    width: auto;
+    display: block;
 }
 
 .encabezado nav{
@@ -42,7 +50,8 @@ body{
 .encabezado nav ul li a{
     display:block;
     color:#fff;
-    padding:28px;
+    /* Ajustado el padding a 45px para hacer la barra gris más alta y que quepa el logo grande */
+    padding:45px 28px;
     border-left:1px solid #696969;
     text-decoration:none;
 }
@@ -54,13 +63,11 @@ body{
 /*------------------------------------
 PRESENTACION
 -------------------------------------*/
-
 .presentacion{
-    background:radial-gradient(280px at 25% 10%, #a7f3d0, #065f46);
+    background: linear-gradient(180deg, #0f3d7a 0%, #071e3d 100%);
     overflow:hidden;
-    border-bottom:3px solid #065f46;
+    border-bottom:3px solid #071e3d;
 }
-
 .introduccion-presentacion{
     float:left;
 }
@@ -83,7 +90,7 @@ PRESENTACION
 
 a.aprender-mas{
     font-size:2.1875em;
-    border:1px solid #0d5c25;
+    border:1px solid #071e3d;
     padding:30px 50px;
     display:block;
     text-align:center;
@@ -92,8 +99,8 @@ a.aprender-mas{
     text-decoration:none;
     text-shadow:3px 7px 0 #000;
     border-radius:10px;
-    background:linear-gradient(to top,#319b41,#0d5c25);
-    box-shadow:0 8px 0 0 #20732f,
+    background:linear-gradient(to top,#0f3d7a,#071e3d);
+    box-shadow:0 8px 0 0 #05152b,
                0 0 25px 5px #fff;
 }
 
@@ -110,7 +117,7 @@ a.aprender-mas:hover{
 /*------------Acceso-rapido------------*/
 
 .acceso-rapido{
-    background:#21bc4e;
+    background: linear-gradient(135deg, #3a0066 0%, #51087e 100%);
     overflow:hidden;
     border-bottom:3px solid #fff;
 }
@@ -177,14 +184,16 @@ a.aprender-mas:hover{
     padding-bottom:25px;
 }
 
-/* CAMBIO PARA ACOMODAR LAS IMÁGENES */
-
+/* CAMBIO MEJORADO: Las cuatro imágenes quedan simétricas y con esquinas elegantes */
 .articulos img{
     float:left;
-    width:250px;
-    height:auto;
-    margin-right:15px;
-    margin-bottom:10px;
+    width:280px;        
+    height:200px;       
+    object-fit:cover;   
+    margin-right:20px;
+    margin-bottom:15px;
+    border-radius:8px;  
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 
 .articulos article h1{
@@ -208,7 +217,7 @@ a.aprender-mas:hover{
 }
 
 .complementario{
-    background:#0460ad;
+    background: linear-gradient(180deg, #2e0854 0%, #1f0033 100%);
     width:35%;
     display:table-cell;
     padding:0 20px 20px;
@@ -228,7 +237,7 @@ a.aprender-mas:hover{
 }
 
 .complementario ul li{
-    background:url("Imagen/icon.png") no-repeat left center;
+    background:url("imagen/icon.png") no-repeat left center;
     padding-left:24px;
     margin-bottom:8px;
 }
@@ -239,10 +248,9 @@ a.aprender-mas:hover{
 }
 
 .complementario ul li a:hover{
-    color:red;
+    color: #ffeb3b;
     text-decoration:underline;
 }
-
 /************** suscripcion **************/
 
 .suscripcion{
