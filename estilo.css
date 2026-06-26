@@ -8,9 +8,12 @@ body{
     line-height:1.4em;
 }
 
+/* CAMBIO AQUÍ: Ahora es fluido pero respeta tus 980px en PC */
 .contenedor{
-    width:980px;
-    margin:0 auto;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 15px; /* Evita que el texto toque los bordes de la pantalla en móvil */
 }
 
 .encabezado{
@@ -339,6 +342,7 @@ a.aprender-mas:hover{
     position:fixed;
     top:30%;
     right:0;
+    z-index: 1000; /* Asegura que no queden abajo de otro elemento */
 }
 
 .social a{
@@ -354,4 +358,128 @@ a.aprender-mas:hover{
 .social img{
     border-radius:50%;
     display:block;
+}
+
+
+/* ==========================================================================
+   NUEVA SECCIÓN RESPONSIVA: Se activa en pantallas menores a 768px (Móviles)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. ENCABEZADO */
+    .logo, .encabezado nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    .logo {
+        top: 0;
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+    }
+    .encabezado nav ul li {
+        display: block; /* Menú vertical en cel */
+        margin-right: 0;
+        border-bottom: 1px solid #575757;
+    }
+    .encabezado nav ul li a {
+        padding: 15px 0;
+        border-left: none;
+    }
+
+    /* 2. PRESENTACIÓN (BANNER) */
+    .introduccion-presentacion {
+        float: none;
+        width: 100%;
+    }
+    .introduccion-presentacion h1 {
+        font-size: 1.8em;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+    a.aprender-mas {
+        font-size: 1.3em;
+        padding: 15px 20px;
+        margin: 20px auto;
+        max-width: 280px;
+    }
+    .presentacion img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        max-width: 80%;
+        height: auto;
+        top: 0;
+    }
+
+    /* 3. ACCESO RÁPIDO */
+    .acceso-rapido figure {
+        display: block;
+        width: 100%; /* Uno por fila */
+        margin-bottom: 20px;
+    }
+    .acceso-rapido figure img {
+        max-width: 120px; /* Reduce los iconos */
+        height: auto;
+    }
+
+    /* 4. BLOQUE DE CONTENIDO (ARTÍCULOS Y ASIDE) */
+    .bloque-contenido .contenedor {
+        display: block; /* Desactiva la tabla */
+    }
+    .articulos, .complementario {
+        display: block; /* Se apilan verticalmente */
+        width: 100%;
+        padding: 15px 0;
+    }
+    .articulos img {
+        float: none; /* La imagen ya no flota, se centra */
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin: 0 auto 15px auto;
+    }
+    .articulos article h1, .articulos article p {
+        text-align: center; /* Mejor lectura en móvil */
+    }
+
+    /* 5. SUSCRIPCIÓN */
+    .suscripcion h2 {
+        text-align: center;
+    }
+    .suscripcion form input {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* 6. PIE DE PÁGINA */
+    .piedepagina .contenedor {
+        display: block;
+        text-align: center;
+    }
+    .piedepagina small, .piedepagina nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .piedepagina nav ul li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    /* 7. REDES SOCIALES (Opcional: Ocultas o abajo para que no estorben al leer) */
+    .social {
+        position: static;
+        display: flex;
+        justify-content: center;
+        background: #222;
+        padding: 10px 0;
+    }
+    .social a {
+        margin: 0 10px;
+    }
 }
